@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body{
+            height: 100vh;
+            width: 100vw;
+        }
+        nav{
+            /* border: 5px solid red; */
+            height: 80px;
+            background-color: rgb(246, 196, 15);
+            /* background-color: aquamarine; */
+        }
+        .logo, .search{
+            /* background-color: blue; */
+            height: 100%;
+            width: 25%;
+            float: left;
+        }
+        .logo{
+            margin-left: 5%;
+        }
+        .logo_img{
+            /* border: 5px solid black; */
+            height: 100%;
+            width: 25%;
+            float: left;
+        }
+        .logo_name{
+            /* border: 5px solid green; */
+            height: 100%;
+            width: 65%;
+            float: left;
+        }
+        img{
+            height: 100%;
+            width: 100%;
+        }
+        .link{
+            /* background-color:chartreuse; */
+            height: 100%;
+            width: 40%;
+            float: left;
+        }
+        .box_link{
+            /* border: 5px solid yellow; */
+            float: left;
+            padding: 10px;
+            font-size: 25px;
+            margin: 10px 25px;
+        }
+        .search_name{
+            /* border: 5px solid black; */
+            height: 100%;
+            width: 70%;
+            float: left;
+            padding-top: 20px;
+            padding-left: 70px;
+        }
+        .search_name input{
+            height: 50px;
+            width: 200px;
+            background-color: yellow;
+            padding-left: 30px;
+            font-size: 17px;
+        }
+        .Cname{
+            font-size: 30px;
+            padding-top: 10px;
+        }
+        .Ctag{
+            padding: 3px;
+        }
+        .search_logo{
+            /* border: 5px solid black; */
+            height: 100%;
+            width: 30%;
+            float: left;
+        }
+        .icon{
+            font-size: 1.6rem;
+            margin-top: 20px;
+            height: 50px;
+            width: 65px;
+            background-color:rgb(1, 206, 247);
+        }
+        main{
+            /* border: 5px solid rebeccapurple; */
+            background-color:rgb(246, 216, 15);
+            height: calc(100% - 80px);
+            width: 100%;
+        }
+        .main_text{
+            height: 100%;
+            width: 60%;
+            /* border: 5px solid rgb(244, 12, 147); */
+            float: left;
+        }
+        .main_text_heading{ 
+            height: 30%;
+            width: 70%;
+            margin: 90px 0 0 100px;
+            /* border: 5px solid black; */
+            padding-top: 10px;
+            padding-left: 30px;
+            font-size: 35px;
+        }
+        .main_text_paragraph{
+            height: 30%;
+            width: 70%;
+            margin: 0 0 0 100px;
+            /* border: 5px solid black; */
+            padding-left: 30px
+        }
+        .main_p{
+            font-size: 25px;
+        }
+        .main_text_button{
+            height: 20%;
+            /* border: 5px solid black; */
+            padding-left: 10%;    
+        }
+        .btn1,.btn2,.slide1_btn,.slide3_btn,.slide4_btn{
+            margin-top: 15px;
+            margin-left: 10%;
+            height: 60px;
+            width: 150px;
+            font-size: 20px;
+            border-radius: 80px;
+            border: none;
+        }
+        .btn1{
+            background-color: rgb(1, 206, 247);
+        }
+        .btn1:hover{
+            color: rgb(1, 206, 247);
+            background-color:white;
+        }
+        .btn2{
+            border: 4px solid white;
+            color: white;
+            background-color: rgb(246, 216, 19);
+            font-weight: 500;
+        }
+        .btn2:hover{
+            color: white;
+            background-color: rgb(1, 206, 247);
+            border: none;
+        }
+        .main_img{
+            height: 100%;
+            width: 40%;
+            /* border: 5px solid brown; */
+            float: left;
+        }
+        .slide1{
+            height:100%;
+            background-color: white;
+            /* border: 10px solid black; */
+        }
+        .slide1_rt ,.slide1_lt{
+            height: 100%;
+            width: 50%;
+            /* border: 5px solid green; */
+            float: left;
+        }
+        .slide1_heading{
+            height: 20%;
+            width: 80%;
+            margin: 90px 0 0 100px;
+            /* border: 5px solid black; */
+            font-size: 35px;
+            padding-top: 10px;
+            padding-left: 30px;
+        }
+        .slide1_paragraph{
+            height: 30%;
+            width: 80%;
+            /* border: 5px solid blue; */
+            margin: 0 0 0 100px;
+            font-size: 22px;
+            padding: 30px;
+        }
+        .slide1_btn,.slide3_btn{
+            background-color: rgb(246, 216, 19);
+            color: white;
+            margin-left: 20%;
+        }
+        .slide1_btn:hover{
+            color: rgb(246, 216, 19);
+            background-color: white;
+            border: 2px solid rgb(246, 216, 19);
+        }
+        .slide1_rt_box{
+            height: 250px;
+            width: 250px;
+            background-color: rgb(246 196 15);
+            /* border: 5px solid red; */
+            float: left;
+            margin-top: 300px;
+            position: absolute;
+        }
+        .slide1_rt img{
+            height: 400px;
+            width: 400px;
+            position: absolute;
+            margin-top: -190px;
+            margin-left: 40px;
+        }
+        .slide-box{
+            height: 400px;
+            width: 400px;
+            position: absolute;
+            margin-top: -190px;
+            margin-left: 40px;
+            background-color:rgb(246 , 196, 15);
+            opacity: 0.7;
+        #play{
+            font-size: 50px;
+            background-color: white;
+            margin: 170px 0 0 170px;
+            color: rgb(246 , 196, 15);
+            border-radius: 4rem ;
+            border: none;
+            padding: 2px;
+        }
+        }
+        .slide2{
+            height: 100%;
+            /* border: 2px solid blue; */
+            background-color: rgb(246, 196, 15);
+        }
+        .slide2_heading{
+            display: inline-block;
+            margin-top: 30px;
+            font-size: 45px;
+            font-weight: 400px;
+            margin-left: 40%;
+            color: white;
+        }
+        .slide2_para{
+            font-size: x-large;
+            color: white;
+            text-align: center;
+        }
+        .main_container-box{
+            height: calc(100% - 110px);
+            /* background-color: rgb(246, 196, 15); */
+        }
+        .main_container{
+            height: 90%;
+            width: 24%;
+            background-color: rgb(246, 196, 15);
+            float: left;
+            margin: 20px 0 0 100px;
+        }
+        .main_container img{
+            height: 65%;
+        }
+        .main_container h3{
+            display: inline;
+            font-size: 40px;
+            color: white;
+            margin-left: 50px;
+            font-weight: 500px;
+        }
+        .main_container p{
+            font-size: 25px;
+            text-align: center;
+            color: white;
+        }
+        .slide3{
+            /* border: 5px solid red; */
+            height: 100%;
+        }
+        .slide3_rt ,.slide3_lt{
+            height: 100%;
+            width: 50%;
+            /* border: 5px solid green; */
+            float: left;
+        }
+        .slide3_lt_box{
+            height: 250px;
+            width: 250px;
+            background-color: rgb(246 196 15);
+            /* border: 5px solid red; */
+            float: left;
+            margin-top: 350px;
+            margin-left: 480px;
+            position: absolute;
+        }
+        .slide3_lt_box img{
+            height: 400px;
+            width: 400px;
+            position: absolute;
+            margin-top: -180px;
+            margin-left: -180px;
+        }
+        .slide3_box{
+        height: 400px;
+        width: 400px;
+        background-color: rgb(246 , 196, 15);
+        position: absolute;
+        margin-top: 170px;
+        margin-left: 300px;
+        opacity: 0.6;
+        }
+        .slide3_heading{
+            height: 22%;
+            width: 90%;
+            /* border: 5px solid blue; */
+            margin: 20% 0 0 10%;
+            font-size: 55px;
+            /* padding: 25px; */
+            font-weight: 500px;
+        }
+        .slide3_paragraph{
+            height: 20%;
+            width: 90%;
+            /* border: 5px solid blue; */
+            margin: 0 0 0 10%;
+            font-size: 22px;
+        }
+        .slide3_btn:hover{
+            color: rgb(246, 216, 19);
+            background-color: white;
+            border: 2px solid rgb(246, 216, 19);
+        }
+        .slide3_btn{
+            margin-left: 10%;
+        }
+        .slide4,.slide5,.slide7{
+            height: 100%;
+            background-color: rgb(246, 196, 15);
+        }
+        .slide4_head,.slide5_head,.slide7_head{
+            height: 20%;
+            width: 100%;
+            /* border: 5px solid blue; */
+            display: inline-block;
+            font-size: x-large;
+            text-align: center;
+            padding-top: 25px;
+            font-weight: 200px;
+            color: white;
+        }
+        .slide4_img_box,.slide5_img_box{
+            height: 80%;
+            width: 90%;
+            /* border: 2px solid blue; */
+            margin-left: 5%;
+        }
+        .slide4_box,.slide5_box{
+            border: 1px solid blue;
+            display: inline-block;
+            height: 70%;
+            width: 25%;
+            margin: 2% 1% 1% 5%;
+        }
+        .slide4_box h1{
+        display: inline-block;
+        color: white;
+        font-size: xx-large;
+        margin-left: 35%;
+    }
+    .slide4_btn{
+        background-color: rgb(1, 206, 247);
+        margin-left: 30%;
+    }
+    .slide4_btn:hover{
+        color: rgb(1, 206, 247);
+        background-color:white;
+    }
+    .slide5{
+        background-color: white;
+    }
+    .slide5_head{
+        color: black;
+        font-weight:500;
+    }
+    .slide5_box{
+        font-weight: 400;
+        text-align: center;
+    }
+    .social_links_box{
+        width: 90%;
+        height: 20%;
+        /* border: 2px solid red; */
+        margin-left: 10%;
+    }
+    .social_links{
+        width: 24%;
+        /* border: 2px solid blue; */
+        height: 100%;
+        float: left;
+        margin-left: 2px;
+    }
+    .social_links_btn{
+        height: 60%;
+        width: 60%;
+        font-size: 35px;
+        border-radius: 70px;
+        margin: 5%;
+        color: rgb(246, 196, 15);
+        background-color: white;
+        border: none;    
+    }
+    .social_links_btn:hover{
+        background-color: rgb(1, 206, 247);
+        color: white;
+    }
+    .slide6{
+        height: 100%;
+        /* border: 2px solid blue; */
+    }
+    .slide6_box{
+        margin-top: 7%;
+        margin-left: 5%;
+        height: 70%;
+        width: 90%;
+        /* border: 5px solid red; */
+        position: absolute;
+    }
+    .slide6_cover_box{
+        height: 70%;
+        width: 90%;
+        position: absolute;
+        background-color: rgb(246 , 196, 15);
+        margin-top: 7%;
+        margin-left: 5%;
+        opacity: 0.6;
+    }
+    .cover_img_link{
+        height: 70%;
+        width: 90%;
+        margin-top: 7%;
+        margin-left: 5%;
+        /* border: 5px solid red; */
+        position: absolute;
+    }
+    .cover_img{
+        height: 19%;
+        width: 10%;
+        /* border: 5px solid red; */
+        float: left;
+        margin: 11%;
+    }
+    .cover_img{
+        font-size: 35px;
+        color: white;
+        font-weight: 300;
+    }
+    .slide7{
+        height: 100%;
+        background-color: white;
+    }
+    .slide7_head{
+        color: black;
+        /* border: 2px solid orange; */
+    }
+    .slide7_img_box{
+        height: 75%;
+        width: 90%;
+        margin-left: 5%;
+        /* border: 2px solid blue; */
+    }
+    .slide7_img{
+        border: 2px solid gray;
+        height: 100%;
+        width: 25%;
+        float: left;
+        margin: 0% 0% 1% 7%;
+    }
+    .slide7_img_details{
+        /* border: 1px solid blue; */
+        height: 60%;
+        padding: 5px;
+    }
+    .date,.about_more{
+        color: aqua;
+    }
+    footer{
+        height: 75%;
+        /* border: 3px solid violet; */
+        background-color: rgba(13, 13, 13, 0.578);
+    }
+    .footer_box{
+        height: 50%;
+        width: 20%;
+        margin: 8% 0 0 4%;
+        float: left;
+        /* border: 5px solid salmon; */
+        font-size: 25px;
+        color: white;
+    }
+    ul{
+        list-style-type: none;
+    }
+    .about_link{
+        font-size: 30px;
+    }
+    .footer_box1{
+        width: 40%;
+        height: 50%;
+        color: white;
+        margin-top: 8%;
+        margin-left: 5%;
+        font-size: 25px;
+        float: left;
+        /* border: 5px solid blue; */
+    }
+    .footer_content{
+        height: 40%;
+        width: 100%;
+        float: left;
+        text-align: right;
+        /* border: 2px solid hotpink; */
+    }
+    .content_input{
+        height: 35%;
+        width: 100%;
+        float: left;
+        /* border: 2px solid red; */
+    }
+    .content_input input{
+        font-size: 60px;
+        width: 70%;
+        float: left;
+        background-color: rgb(246, 216, 19);
+        border: none;
+    }
+    .content_btn{
+        font-size: 60px;
+        width: 30%;
+        background-color: rgb(1, 206, 247);
+        color: white;
+        border: none;
+    }
+    .content_btn:hover{
+        background-color: white;
+        color: rgb(1, 206, 247);
+    }
+    .content_link{
+        height: 25%;
+        width: 100%;
+        /* border: 2px solid blue; */
+        float: left;
+    }
+    .footer_links_btn{
+        height: 65px;
+        width: 12%;
+        float: right;
+        border: 3px solid green;
+        font-size: 45px;
+        border-radius: 35px;
+    
+    }
+    .footer_links_btn:hover{
+        background-color: rgb(1, 206, 247);
+        color: rgb(246, 216, 19);
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <div class="logo_img">
+                <img src="./istockphoto-931785704-612x612-removebg-preview.png" alt="">
+            </div>
+            <div class="logo_name">
+                <p class="Cname">Company Name</p>
+                <p class="Ctag">Lorem ipsum Lorem</p>
+            </div>
+        </div>
+        <div class="link">
+            <div class="box_link">Home</div>
+            <div class="box_link">About</div>
+            <div class="box_link">Service</div>
+            <div class="box_link">Contact</div>
+        </div>
+        <div class="search">
+            <div class="search_name">
+                <input type="text" placeholder="search here........" name="search" id="search">
+            </div>
+            <div class="search_logo">
+               <button class="icon"> <i class="ri-search-line"></i></button>
+            </div>
+        </div>
+    </nav>
+ <!-- main start -->
+    <main>
+        <div class="main_text">
+        <div class="main_text_heading">
+            <h1>First I wanted to be a veterinarian</h1>
+        </div>
+        <div class="main_text_paragraph">
+            <p class="main_p">Lorem ipsum, dolor sit amet consectetur adipisicingv Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt maiores similique rerum dicta. Placeat quos aut, illum repudiandae nostrum harum, minima eos dolor quae beatae cum temae.</p>
+        </div>
+        <div class="main_text_button">
+            <button class="btn1">Contact Us</button>
+            <button class="btn2">Our Service</button>
+        </div>
+        </div>
+        <div class="main_img">
+            <img src="./images-removebg-preview (1).png" alt="img1 ">
+        </div>
+    </main>
+<!-- section .slide1 start -->
+<section class="slide1">
+    <div class="slide1_lt">
+        <div class="slide1_heading">
+        <h1>As a veterinarian and lover of animals.</h1>
+        </div>
+        <div class="slide1_paragraph">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident qui laboriosam quidem ipsum alias saepe nesciunt doloribus asperiores, consectetur rem!Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore amet non sint repellat a enim placeat qui dolores possimus veritatis?</p>
+    </div>
+        <button class="slide1_btn">Our Service</button>
+    </div>
+    <div class="slide1_rt">
+        <div class="slide1_rt_box">
+        <img src="https://st5.depositphotos.com/68029948/66573/i/450/depositphotos_665731184-stock-photo-pretty-pembroke-welsh-corgi-dog.jpg"
+        alt="">
+        <div class="slide-box">
+            <button id="play">
+                <i class="ri-play-circle-line"></i>
+            </button>
+        </div>
+    </div>
+</div>
+</section>
+<!-- section .slide1 end -->
+<!-- section .slide2 start -->
+ <section class="slide2">
+    <h1 class="slide2_heading">Title Here</h1>
+    <p class="slide2_para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus aliquam <br>explicabo eveniet fugiat aperiam labore, adipisci.</p>
+ <div class="main_container-box">
+    <div class="main_container">
+        <img src="https://img.freepik.com/premium-photo/photo-portrait-veterinarian-pet-doctor-examining-happy-corgi-dog-clinic_763111-324886.jpg" alt="">
+        <h3>Veterinarian</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam, iste.</p>
+    </div>
+    <div class="main_container">
+        <img src="https://www.cardiobird.com/wp-content/uploads/2020/09/%E7%8B%97%E8%B2%93%E9%BA%BB%E9%86%89%E7%9A%84%E8%A1%93%E5%89%8D%E8%A9%95%E4%BC%B0-aaha%E6%80%8E%E9%BA%BC%E8%AA%AA.jpg" alt="">
+        <h3>Dental Care</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet, consequatur?</p>
+    </div>
+    <div class="main_container">
+        <img src="https://cdn-eaekd.nitrocdn.com/CxTeoSPKdjdqTSxLEEGaKiGroHlKASqH/assets/images/optimized/rev-d765668/career/options/images/veterinary.jpg" alt="">
+        <h3>Vaccination Care</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, nobis.</p>
+    </div>
+ </div>
+</section>
+<!-- Section slide2 end -->
+ <!-- Section slide3 Start -->
+<section class="slide3">
+    <div class="slide3_lt">
+        <div class="slide3_lt_box">
+        <img src="https://st5.depositphotos.com/1000975/62527/i/450/depositphotos_625278396-stock-photo-vet-doctor-examining-golden-retriever.jpg" 
+        alt="">
+        </div>
+        <div class="slide3_box"></div>
+    </div>
+    </div>
+    <div class="slide3_rt">
+        <h1 class="slide3_heading">As a veterinarian and lover of animals.</h1>
+        <p class="slide3_paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident qui laboriosam quidem ipsum alias saepe nesciunt doloribus asperiores, consectetur rem!Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore amet non sint repellat a enim placeat qui dolores possimus veritatis?</p>
+        <button class="slide3_btn">Our Service</button>
+    </div>
+</section>
+<!-- Section Slide3 end -->
+ <!-- Section Slide4 start -->
+<section class="slide4">
+    <div class="slide4_head">
+        <h1> Title here</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet.<br> Explicabo, molestias. Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="slide4_img_box">
+        <div class="slide4_box">
+            <img src="https://www.shutterstock.com/image-photo/young-nine-month-old-english-600nw-103310279.jpg" alt="">
+            <h1><del>$50</del> $30</h1><br>
+            <button class="slide4_btn"> Buy Now</button>
+        </div>
+        <div class="slide4_box">
+            <img src="https://static3.depositphotos.com/1009420/258/i/450/depositphotos_2585561-stock-photo-mixed-breed-dog.jpg" alt="">
+            <h1><del>$40</del> $25</h1><br>
+            <button class="slide4_btn"> Buy Now</button>
+        </div>
+        <div class="slide4_box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi1HFNNhDMFQ81BT1hI2An2CC_B9t7UeEVhA&s" alt="">
+            <h1><del>$40 </del>$20</h1><br>
+            <button class="slide4_btn"> Buy Now</button>
+        </div>
+    </div>
+</section>
+<!-- Section Slide4 end -->
+ <!-- Section Slide5 Start -->
+  <section class="slide5">
+    <div class="slide5_head">
+        <h1>The Vetcare Team</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing Lorem ipsum dolor sit amet.<br> Explicabo, molestias. Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="slide5_img_box">
+        <div class="slide5_box">
+            <img src="https://i.pinimg.com/736x/4d/cd/94/4dcd94cf4ff32848370fe93ba05b8970.jpg"alt="">
+            <h1>Jennifer Mullen</h1>
+            <p>VETERINARY</p>
+            <div class="social_links_box">
+                <div class="social_links"><button class="social_links_btn">
+                    <i class="ri-instagram-fill"></i>
+                    </button>
+                </div>
+                <div class="social_links"><button class="social_links_btn">
+                    <i class="ri-facebook-circle-fill"></i>
+                    </button>
+                </div>
+                <div class="social_links"><button class="social_links_btn">
+                    <i class="ri-twitter-fill"></i>
+                    </button>
+                </div>
+                <div class="social_links"><button class="social_links_btn">
+                    <i class="ri-whatsapp-fill"></i>
+                </div>
+            </button>
+            </div>
+            
+           
+        </div>
+        <div class="slide5_box">
+            <img src="https://st.depositphotos.com/1524643/3214/i/450/depositphotos_32145979-stock-photo-nurse.jpg" alt="">
+            <h1>Sheeren Collins</h1>
+            <p>ADMINISTRATION</p>
+            <div class="social_links_box">
+                <div class="social_links"><button class="social_links_btn">
+                    <i class="ri-instagram-fill"></i>
+                    </button>
+                </div>
+                <div class="social_links"><button class="social_links_btn">
+                    <i class="ri-facebook-circle-fill"></i>
+                    </button>
+                </div>
+                <div class="social_links"><button class="social_links_btn">
+                    <i class="ri-twitter-fill"></i>
+                    </button>
+                </div>
+                <div class="social_links"><button class="social_links_btn">
+                    <i class="ri-whatsapp-fill"></i>
+                </div>
+            </button>
+            </div>
+        </div>
+        <div class="slide5_box">
+            <img src="https://inscol.com/india/wp-content/uploads/2022/08/Image-3-625x625-1.jpg" alt="">
+            <h1>Jennifer Collins</h1>
+            <p>VETERINARY</p>
+            <div class="social_links_box">
+                <div class="social_links"><button class="social_links_btn">
+                    <i class="ri-instagram-fill"></i>
+                    </button>
+                </div>
+                <div class="social_links"><button class="social_links_btn">
+                    <i class="ri-facebook-circle-fill"></i>
+                    </button>
+                </div>
+                <div class="social_links"><button class="social_links_btn">
+                    <i class="ri-twitter-fill"></i>
+                    </button>
+                </div>
+                <div class="social_links"><button class="social_links_btn">
+                    <i class="ri-whatsapp-fill"></i>
+                </div>
+            </button>
+        </div>
+     </div>
+
+  </section>
+  <!-- Section Slide5 end -->
+<!-- Section Slide6 Start -->
+ <section class="slide6">
+    <div class="slide6_box">
+    <img src="https://previews.123rf.com/images/famveldman/famveldman2301/famveldman230100091/197342407-vet-examining-dog-puppy-at-veterinary-doctor-animal-clinic-pet-check-up-and-vaccination-health-care.jpg" alt="">
+</div>
+<div class="slide6_cover_box"></div>
+<div class="cover_img_link">
+<div class="cover_img">
+    <img src="./heart.png" alt="">
+    <br>
+    <p>+34793</p>
+    <h4>Happy Clients</h4>
+</div>
+<div class="cover_img">
+    <img src="./stethoscope.png" alt="">
+    <br>
+    <p>+45382</p>
+    <h4>Department</h4>
+</div>
+<div class="cover_img">
+    <img src="./injectionn-.png" alt="">
+    <br>
+    <p>+54762</p>
+    <h4>Vaccinations</h4>
+</div>
+</div>
+ </section>
+ <section class="slide7">
+    <div class="slide7_head">
+        <h1>Recent Posts</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="slide7_img_box">
+        <div class="slide7_img">
+            <div class="slide7_img_details">
+            <img src="https://img.freepik.com/free-photo/happy-female-veterinarian-with-dog-table-showing-thumbup-sign_23-2147928397.jpg" alt="">
+            <h2>As a veterinarian and lover of animals</h2><br>
+            <p class="date">FEBRUARY 09,2020</p><br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus vitae culpa doloremque fugiat adipisci alias.</p>
+            <br>
+            <h2 class="about_more">Read More+</h2>
+            </div>
+        </div>
+        <div class="slide7_img">
+            <div class="slide7_img_details">
+            <img src="https://png.pngtree.com/png-vector/20240125/ourlarge/pngtree-smiling-vet-doctor-with-pet-png-image_11491130.png" alt="">
+            <h2>As a veterinarian and lover of animals</h2><br>
+            <p class="date">FEBRUARY 10,2021</p><br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus vitae culpa doloremque fugiat adipisci alias.</p>
+            <br>
+            <h2 class="about_more">Read More+</h2>
+        </div>
+        </div>
+        <div class="slide7_img">
+             <div class="slide7_img_details">
+            <img src="https://thumbs.dreamstime.com/b/veterinarian-17919171.jpg" alt="">
+            <h2>As a veterinarian and lover of animals</h2><br>
+            <p class="date">FEBRUARY 11,2020</p><br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus vitae culpa doloremque fugiat adipisci alias.</p>
+            <br>
+            <h2 class="about_more">Read More+</h2>
+            </div>
+        </div>
+    </div>
+ </section>
+ <!-- Section slide7 end -->
+<!-- Footer Start -->
+ <footer>
+    <div class="footer_box">
+        <h1>About</h1><br>
+        <div class="about_link">
+            <ul>
+            <li>History</li>
+            <li>Our Team</li>
+            <li>Brand Guidelines</li>
+            <li>Terms&Condition</li>
+            <li>Privacy Policy</li>
+        </ul>
+    </div>
+</div>
+    <div class="footer_box">
+        <h1>Services</h1><br> 
+        <div class="about_link">
+            <ul>
+            <li>How to Order</li>
+            <li>Our Product</li>
+            <li>Order Status</li>
+            <li>Promo</li>
+            <li>Payment Method</li>
+         </ul>
+        </div>
+    </div>
+    <div class="footer_box1">
+        <div class="footer_content">
+            <h1>Title Here</h1>
+            <p>Lorem ipsum aviable Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="content_input">
+            <input type="text">
+            <button class="content_btn">
+                <i class="ri-telegram-2-fill"></i>
+            </button>
+        </div>
+        <div class="footer_link">
+            <button class="footer_links_btn">
+                <i class="ri-whatsapp-line"></i>
+            </button>
+            <button class="footer_links_btn">
+                <i class="ri-twitter-line"></i>
+            </button>
+            <button class="footer_links_btn">
+                <i class="ri-facebook-circle-line"></i>
+            </button>
+            <button class="footer_links_btn">
+                <i class="ri-instagram-line"></i>
+            </button>
+        </div>
+    </div>
+            
+
+</footer>
+</body>
+</html>
